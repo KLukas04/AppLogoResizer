@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct AppLogoResizerApp: App {
-    let persistenceController = PersistenceController.shared
-
+    @StateObject var viewModel = LogoViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView().environmentObject(viewModel)
         }
     }
 }
