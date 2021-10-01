@@ -14,8 +14,13 @@ struct SizeSelectionView: View {
         VStack{
             MultiSelectionView(options: $viewModel.sizes, optionToString: {$0.key}, selected: $viewModel.selectedSizes)
             
-            NavigationLink(destination: FinishScreen()) {
-                Text("Next")
+            Button {
+                viewModel.resizeImages()
+                viewModel.saveImages { url in
+                    print("URL of folder:" + "\(String(describing: url))")
+                }
+            } label: {
+                Text("Save")
                     .bold()
                     .frame(maxWidth: .infinity)
                     .frame(height: 50, alignment: .center)
@@ -23,10 +28,12 @@ struct SizeSelectionView: View {
                     .background(Color("Primary"))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                     .padding(.horizontal)
-                    .padding(.bottom)
             }
+            .padding(.bottom)
+            .disabled(viewModel.selectedSizes.isEmpty)
         }
         .navigationTitle(Text("Sizes"))
+        .background(Color("Background").ignoresSafeArea())
     }
 }
 

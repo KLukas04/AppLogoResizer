@@ -7,9 +7,10 @@
 
 import Foundation
 import SwiftUI
-import Zip
 
 class LogoViewModel: ObservableObject{
+    
+    @Published var rootIsActive = false
     
     @Published var image: UIImage?
     @Published var logoName = ""
@@ -43,6 +44,9 @@ class LogoViewModel: ObservableObject{
     
     @Published var resizedImages = [String: UIImage]()
     
+    var urls = [URL]()
+    
+    @Published var showThankYouScreen = false
     func resizeImages(){
         resizedImages.removeAll()
         
@@ -59,7 +63,7 @@ class LogoViewModel: ObservableObject{
     
     private func createTempDirectory() -> URL? {
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let dir = documentDirectory.appendingPathComponent("temp-dir-\(UUID().uuidString)")
+            let dir = documentDirectory.appendingPathComponent("Logos_" + "\(logoName)")
             do {
                 try FileManager.default.createDirectory(atPath: dir.path, withIntermediateDirectories: true, attributes: nil)
             } catch {
@@ -73,7 +77,7 @@ class LogoViewModel: ObservableObject{
     
     private func saveImages() -> URL? {
         guard let directory = createTempDirectory() else { return nil }
-
+        
         print(directory)
         do {
             for image in resizedImages{
@@ -93,31 +97,40 @@ class LogoViewModel: ObservableObject{
         }
     }
     
-    func zipImages(completion: @escaping ((URL?) -> ())) {
+    func saveImages(completion: @escaping ((URL?) -> ())) {
         if !resizedImages.isEmpty{
             DispatchQueue.main.async {
                 guard let directory = self.saveImages() else {
                     completion(nil)
                     return
                 }
-
-                do {
-                    let zipFilePath = try Zip.quickZipFiles([directory], fileName: "archive-\(UUID().uuidString)")
-                    do{
-                        try FileManager.default.removeItem(at: directory)
-                    }catch{
-                        print("Couldnt delete folder at: " + "\(directory)")
+                
+                let av = UIActivityViewController(activityItems: [directory], applicationActivities: nil)
+                av.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
+                    if completed {
+                        self.deleteFolder()
+                        self.showThankYouScreen = true
                     }
-                    let av = UIActivityViewController(activityItems: [zipFilePath], applicationActivities: nil)
-                    
-                        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: {
-                            print("Shared")
-                        })
-                    completion(zipFilePath)
-                } catch {
-                    completion(nil)
-                }
+                 }
+                
+                
+                UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: {
+                    print("Success")
+                })
+                self.urls.append(directory)
+                completion(directory)
+                self.rootIsActive = false
             }
+        }
+    }
+    
+    func deleteFolder(){
+        do{
+            for url in urls{
+                try FileManager.default.removeItem(at: url)
+            }
+        }catch{
+            print("Couldnt delete folder")
         }
     }
 }
@@ -141,12 +154,12 @@ extension UIImage {
             width: size.width * scaleFactor,
             height: size.height * scaleFactor
         )
-
+        
         // Draw and return the resized UIImage
         let renderer = UIGraphicsImageRenderer(
             size: scaledImageSize
         )
-
+        
         let scaledImage = renderer.image { _ in
             self.draw(in: CGRect(
                 origin: .zero,

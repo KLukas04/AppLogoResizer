@@ -21,9 +21,6 @@
 		CC76C1C62705DF4A00524D26 /* SizeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1C42705DF4A00524D26 /* SizeSelectionView.swift */; };
 		CC76C1C82705E74600524D26 /* MultiSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1C72705E74600524D26 /* MultiSelector.swift */; };
 		CC76C1C92705E74600524D26 /* MultiSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1C72705E74600524D26 /* MultiSelector.swift */; };
-		CC76C1CB2705EF4B00524D26 /* FinishScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1CA2705EF4B00524D26 /* FinishScreen.swift */; };
-		CC76C1CC2705EF4B00524D26 /* FinishScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1CA2705EF4B00524D26 /* FinishScreen.swift */; };
-		CC76C1CF2705F44800524D26 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = CC76C1CE2705F44800524D26 /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +34,6 @@
 		CC76C1C12705D9E000524D26 /* LogoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewModel.swift; sourceTree = "<group>"; };
 		CC76C1C42705DF4A00524D26 /* SizeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSelectionView.swift; sourceTree = "<group>"; };
 		CC76C1C72705E74600524D26 /* MultiSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelector.swift; sourceTree = "<group>"; };
-		CC76C1CA2705EF4B00524D26 /* FinishScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC76C1CF2705F44800524D26 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +73,6 @@
 				CC76C1C12705D9E000524D26 /* LogoViewModel.swift */,
 				CC76C1C42705DF4A00524D26 /* SizeSelectionView.swift */,
 				CC76C1C72705E74600524D26 /* MultiSelector.swift */,
-				CC76C1CA2705EF4B00524D26 /* FinishScreen.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -117,7 +111,6 @@
 			);
 			name = "AppLogoResizer (iOS)";
 			packageProductDependencies = (
-				CC76C1CE2705F44800524D26 /* Zip */,
 			);
 			productName = "AppLogoResizer (iOS)";
 			productReference = CC76C1A02705CA7B00524D26 /* AppLogoResizer.app */;
@@ -168,7 +161,6 @@
 			);
 			mainGroup = CC76C1902705CA7900524D26;
 			packageReferences = (
-				CC76C1CD2705F44800524D26 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = CC76C1A12705CA7B00524D26 /* Products */;
 			projectDirPath = "";
@@ -204,7 +196,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC76C1CB2705EF4B00524D26 /* FinishScreen.swift in Sources */,
 				CC76C1C82705E74600524D26 /* MultiSelector.swift in Sources */,
 				CC76C1BF2705CAEC00524D26 /* ImagePicker.swift in Sources */,
 				CC76C1AB2705CA7B00524D26 /* AppLogoResizerApp.swift in Sources */,
@@ -218,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC76C1CC2705EF4B00524D26 /* FinishScreen.swift in Sources */,
 				CC76C1C92705E74600524D26 /* MultiSelector.swift in Sources */,
 				CC76C1C02705CAEC00524D26 /* ImagePicker.swift in Sources */,
 				CC76C1AC2705CA7B00524D26 /* AppLogoResizerApp.swift in Sources */,
@@ -490,25 +480,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CC76C1CD2705F44800524D26 /* XCRemoteSwiftPackageReference "Zip" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/Zip";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CC76C1CE2705F44800524D26 /* Zip */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC76C1CD2705F44800524D26 /* XCRemoteSwiftPackageReference "Zip" */;
-			productName = Zip;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC76C1912705CA7900524D26 /* Project object */;
 }
