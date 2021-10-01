@@ -84,8 +84,8 @@ struct ContentView: View {
             .sheet(isPresented: $showImagePicker, onDismiss: loadImage){
                 ImagePicker(image: $inputImage)
             }
-            .sheet(isPresented: $viewModel.showThankYouScreen){
-                Text("Moin meister")
+            .sheet(isPresented: .constant(true)){
+                ThankYouScreen()
             }
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Wrong image size"), message: Text("You can use this image but the quality could be bad!"))
