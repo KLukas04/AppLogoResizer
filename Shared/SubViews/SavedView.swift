@@ -10,7 +10,7 @@ import SwiftUI
 struct SavedView: View {
     var body: some View {
         VStack{
-            LottieView(fileName: "saved", loopMode: .autoReverse)
+            LottieView(fileName: "saved", loopMode: .playOnce, endFrame: 97)
                 .frame(width: 200, height: 200)
         }
     }

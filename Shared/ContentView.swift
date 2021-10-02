@@ -21,16 +21,16 @@ struct ContentView: View {
         UITableView.appearance().backgroundColor = .clear
     }
     
-    
+    @State private var logoWidth: CGFloat = 300
+    @State private var logoHeight: CGFloat = 300
+    @State private var changeValue = true
     var body: some View {
         NavigationView{
             VStack{
                 if viewModel.image == nil{
                     VStack{
                         Spacer()
-                        Image(systemName: "plus.viewfinder")
-                            .resizable()
-                            .frame(width: 100, height: 100)
+                        LottieView(fileName: "add", loopMode: .loop, startFrame: 5.0, endFrame: 70.0)
                             .onTapGesture {
                                 showImagePicker = true
                             }
@@ -45,7 +45,7 @@ struct ContentView: View {
                         Image(uiImage: viewModel.image!)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 300, height: 300, alignment: .center)
+                            .frame(width: logoWidth, height: logoHeight, alignment: .center)
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                             .onTapGesture {
                                 showImagePicker = true
@@ -53,7 +53,22 @@ struct ContentView: View {
                         Text(viewModel.height + " x " + viewModel.width)
                             .font(.caption2)
                             .foregroundColor(viewModel.correctSize ? .secondary : .red)
-                        TextField("Name", text: $viewModel.logoName)
+                        TextField("Name", text: $viewModel.logoName, onEditingChanged: { _ in
+                            withAnimation(.easeIn){
+                                if changeValue{
+                                    logoWidth = 150
+                                    logoHeight = 150
+                                }else{
+                                    changeValue = true
+                                }
+                            }
+                        }, onCommit: {
+                            withAnimation(.easeOut){
+                                changeValue = false
+                                logoWidth = 300
+                                logoHeight = 300
+                            }
+                        })
                             .foregroundColor(.black)
                             .padding()
                             .background(Color.white.cornerRadius(10))
@@ -85,7 +100,7 @@ struct ContentView: View {
             .sheet(isPresented: $showImagePicker, onDismiss: loadImage){
                 ImagePicker(image: $inputImage)
             }
-            .sheet(isPresented: /*$viewModel.showThankYouScreen*/ .constant(true)){
+            .sheet(isPresented: $viewModel.showThankYouScreen){
                 ThankYouScreen()
             }
             .alert(isPresented: $showingAlert) {
