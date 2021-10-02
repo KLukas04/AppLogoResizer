@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC26BF5627078891006DB1DB /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CC26BF5527078891006DB1DB /* ConfettiSwiftUI */; };
-		CC4A0458270770200008C56B /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = CC4A0457270770200008C56B /* RevenueCat */; };
 		CC4A045A270778730008C56B /* PurchasesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4A0459270778730008C56B /* PurchasesService.swift */; };
 		CC4A045B270778730008C56B /* PurchasesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4A0459270778730008C56B /* PurchasesService.swift */; };
 		CC76C1AB2705CA7B00524D26 /* AppLogoResizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1982705CA7900524D26 /* AppLogoResizerApp.swift */; };
@@ -27,7 +25,33 @@
 		CC76C1C92705E74600524D26 /* MultiSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1C72705E74600524D26 /* MultiSelector.swift */; };
 		CC76C1D1270766A700524D26 /* ThankYouScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1D0270766A700524D26 /* ThankYouScreen.swift */; };
 		CC76C1D2270766A700524D26 /* ThankYouScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76C1D0270766A700524D26 /* ThankYouScreen.swift */; };
+		CC9DAE5F270849D8005AC4EC /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CC9DAE5E270849D8005AC4EC /* ConfettiSwiftUI */; };
+		CC9DAE62270849EA005AC4EC /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = CC9DAE61270849EA005AC4EC /* RevenueCat */; };
+		CC9DAE63270849F4005AC4EC /* ConfettiSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CC9DAE5E270849D8005AC4EC /* ConfettiSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CC9DAE6827085DD0005AC4EC /* AvtivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DAE6727085DD0005AC4EC /* AvtivityIndicator.swift */; };
+		CC9DAE6927085DD0005AC4EC /* AvtivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DAE6727085DD0005AC4EC /* AvtivityIndicator.swift */; };
+		CC9DAE6B270874FD005AC4EC /* saved.json in Resources */ = {isa = PBXBuildFile; fileRef = CC9DAE6A270874FD005AC4EC /* saved.json */; };
+		CC9DAE6C270874FD005AC4EC /* saved.json in Resources */ = {isa = PBXBuildFile; fileRef = CC9DAE6A270874FD005AC4EC /* saved.json */; };
+		CC9DAE7027087553005AC4EC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CC9DAE6F27087553005AC4EC /* Lottie */; };
+		CC9DAE722708759E005AC4EC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DAE712708759E005AC4EC /* LottieView.swift */; };
+		CC9DAE732708759E005AC4EC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DAE712708759E005AC4EC /* LottieView.swift */; };
+		CC9DAE7527087719005AC4EC /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DAE7427087719005AC4EC /* SavedView.swift */; };
+		CC9DAE7627087719005AC4EC /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DAE7427087719005AC4EC /* SavedView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CC9DAE64270849F4005AC4EC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CC9DAE63270849F4005AC4EC /* ConfettiSwiftUI in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CC4A0459270778730008C56B /* PurchasesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesService.swift; sourceTree = "<group>"; };
@@ -42,6 +66,10 @@
 		CC76C1C42705DF4A00524D26 /* SizeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSelectionView.swift; sourceTree = "<group>"; };
 		CC76C1C72705E74600524D26 /* MultiSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelector.swift; sourceTree = "<group>"; };
 		CC76C1D0270766A700524D26 /* ThankYouScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouScreen.swift; sourceTree = "<group>"; };
+		CC9DAE6727085DD0005AC4EC /* AvtivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvtivityIndicator.swift; sourceTree = "<group>"; };
+		CC9DAE6A270874FD005AC4EC /* saved.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = saved.json; sourceTree = "<group>"; };
+		CC9DAE712708759E005AC4EC /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		CC9DAE7427087719005AC4EC /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,8 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC26BF5627078891006DB1DB /* ConfettiSwiftUI in Frameworks */,
-				CC4A0458270770200008C56B /* RevenueCat in Frameworks */,
+				CC9DAE62270849EA005AC4EC /* RevenueCat in Frameworks */,
+				CC9DAE5F270849D8005AC4EC /* ConfettiSwiftUI in Frameworks */,
+				CC9DAE7027087553005AC4EC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +107,13 @@
 			children = (
 				CC76C1982705CA7900524D26 /* AppLogoResizerApp.swift */,
 				CC76C1992705CA7900524D26 /* ContentView.swift */,
-				CC76C19B2705CA7A00524D26 /* Assets.xcassets */,
-				CC76C1BE2705CAEC00524D26 /* ImagePicker.swift */,
 				CC76C1C12705D9E000524D26 /* LogoViewModel.swift */,
 				CC76C1C42705DF4A00524D26 /* SizeSelectionView.swift */,
-				CC76C1C72705E74600524D26 /* MultiSelector.swift */,
 				CC76C1D0270766A700524D26 /* ThankYouScreen.swift */,
-				CC4A0459270778730008C56B /* PurchasesService.swift */,
+				CC9DAE6527085D49005AC4EC /* SubViews */,
+				CC9DAE6627085D72005AC4EC /* Service */,
+				CC76C19B2705CA7A00524D26 /* Assets.xcassets */,
+				CC9DAE6D27087506005AC4EC /* Lottie */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -106,6 +135,34 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		CC9DAE6527085D49005AC4EC /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				CC76C1BE2705CAEC00524D26 /* ImagePicker.swift */,
+				CC76C1C72705E74600524D26 /* MultiSelector.swift */,
+				CC9DAE6727085DD0005AC4EC /* AvtivityIndicator.swift */,
+				CC9DAE712708759E005AC4EC /* LottieView.swift */,
+				CC9DAE7427087719005AC4EC /* SavedView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		CC9DAE6627085D72005AC4EC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CC4A0459270778730008C56B /* PurchasesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CC9DAE6D27087506005AC4EC /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				CC9DAE6A270874FD005AC4EC /* saved.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +173,7 @@
 				CC76C19C2705CA7B00524D26 /* Sources */,
 				CC76C19D2705CA7B00524D26 /* Frameworks */,
 				CC76C19E2705CA7B00524D26 /* Resources */,
+				CC9DAE64270849F4005AC4EC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,8 +181,9 @@
 			);
 			name = "AppLogoResizer (iOS)";
 			packageProductDependencies = (
-				CC4A0457270770200008C56B /* RevenueCat */,
-				CC26BF5527078891006DB1DB /* ConfettiSwiftUI */,
+				CC9DAE5E270849D8005AC4EC /* ConfettiSwiftUI */,
+				CC9DAE61270849EA005AC4EC /* RevenueCat */,
+				CC9DAE6F27087553005AC4EC /* Lottie */,
 			);
 			productName = "AppLogoResizer (iOS)";
 			productReference = CC76C1A02705CA7B00524D26 /* AppLogoResizer.app */;
@@ -175,8 +234,9 @@
 			);
 			mainGroup = CC76C1902705CA7900524D26;
 			packageReferences = (
-				CC4A0456270770200008C56B /* XCRemoteSwiftPackageReference "purchases-ios" */,
-				CC26BF5427078891006DB1DB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				CC9DAE5D270849D8005AC4EC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				CC9DAE60270849EA005AC4EC /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				CC9DAE6E27087553005AC4EC /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = CC76C1A12705CA7B00524D26 /* Products */;
 			projectDirPath = "";
@@ -194,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC76C1B12705CA7B00524D26 /* Assets.xcassets in Resources */,
+				CC9DAE6B270874FD005AC4EC /* saved.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC76C1B22705CA7B00524D26 /* Assets.xcassets in Resources */,
+				CC9DAE6C270874FD005AC4EC /* saved.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +278,11 @@
 				CC76C1C82705E74600524D26 /* MultiSelector.swift in Sources */,
 				CC76C1BF2705CAEC00524D26 /* ImagePicker.swift in Sources */,
 				CC76C1AB2705CA7B00524D26 /* AppLogoResizerApp.swift in Sources */,
+				CC9DAE6827085DD0005AC4EC /* AvtivityIndicator.swift in Sources */,
 				CC4A045A270778730008C56B /* PurchasesService.swift in Sources */,
+				CC9DAE7527087719005AC4EC /* SavedView.swift in Sources */,
 				CC76C1AD2705CA7B00524D26 /* ContentView.swift in Sources */,
+				CC9DAE722708759E005AC4EC /* LottieView.swift in Sources */,
 				CC76C1C22705D9E000524D26 /* LogoViewModel.swift in Sources */,
 				CC76C1C52705DF4A00524D26 /* SizeSelectionView.swift in Sources */,
 			);
@@ -231,8 +296,11 @@
 				CC76C1C92705E74600524D26 /* MultiSelector.swift in Sources */,
 				CC76C1C02705CAEC00524D26 /* ImagePicker.swift in Sources */,
 				CC76C1AC2705CA7B00524D26 /* AppLogoResizerApp.swift in Sources */,
+				CC9DAE6927085DD0005AC4EC /* AvtivityIndicator.swift in Sources */,
 				CC4A045B270778730008C56B /* PurchasesService.swift in Sources */,
+				CC9DAE7627087719005AC4EC /* SavedView.swift in Sources */,
 				CC76C1AE2705CA7B00524D26 /* ContentView.swift in Sources */,
+				CC9DAE732708759E005AC4EC /* LottieView.swift in Sources */,
 				CC76C1C32705D9E000524D26 /* LogoViewModel.swift in Sources */,
 				CC76C1C62705DF4A00524D26 /* SizeSelectionView.swift in Sources */,
 			);
@@ -359,6 +427,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = H95G2JPP2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -389,6 +458,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = H95G2JPP2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -502,15 +572,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CC26BF5427078891006DB1DB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+		CC9DAE5D270849D8005AC4EC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.1;
+				branch = master;
+				kind = branch;
 			};
 		};
-		CC4A0456270770200008C56B /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+		CC9DAE60270849EA005AC4EC /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
 			requirement = {
@@ -518,18 +588,31 @@
 				kind = branch;
 			};
 		};
+		CC9DAE6E27087553005AC4EC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CC26BF5527078891006DB1DB /* ConfettiSwiftUI */ = {
+		CC9DAE5E270849D8005AC4EC /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CC26BF5427078891006DB1DB /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			package = CC9DAE5D270849D8005AC4EC /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
-		CC4A0457270770200008C56B /* RevenueCat */ = {
+		CC9DAE61270849EA005AC4EC /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CC4A0456270770200008C56B /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			package = CC9DAE60270849EA005AC4EC /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
+		};
+		CC9DAE6F27087553005AC4EC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC9DAE6E27087553005AC4EC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

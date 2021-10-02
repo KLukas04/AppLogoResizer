@@ -54,6 +54,7 @@ struct ContentView: View {
                             .font(.caption2)
                             .foregroundColor(viewModel.correctSize ? .secondary : .red)
                         TextField("Name", text: $viewModel.logoName)
+                            .foregroundColor(.black)
                             .padding()
                             .background(Color.white.cornerRadius(10))
                             .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
@@ -84,7 +85,7 @@ struct ContentView: View {
             .sheet(isPresented: $showImagePicker, onDismiss: loadImage){
                 ImagePicker(image: $inputImage)
             }
-            .sheet(isPresented: .constant(true)){
+            .sheet(isPresented: /*$viewModel.showThankYouScreen*/ .constant(true)){
                 ThankYouScreen()
             }
             .alert(isPresented: $showingAlert) {

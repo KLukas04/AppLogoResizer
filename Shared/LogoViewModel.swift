@@ -47,6 +47,9 @@ class LogoViewModel: ObservableObject{
     var urls = [URL]()
     
     @Published var showThankYouScreen = false
+    
+    var ulrOfSavedLocation: URL?
+    
     func resizeImages(){
         resizedImages.removeAll()
         
@@ -110,6 +113,8 @@ class LogoViewModel: ObservableObject{
                     if completed {
                         self.deleteFolder()
                         self.showThankYouScreen = true
+                        let path = directory.absoluteString.replacingOccurrences(of: "file://", with: "shareddocuments://")
+                        self.ulrOfSavedLocation = URL(string: path)!
                     }
                  }
                 
@@ -125,6 +130,8 @@ class LogoViewModel: ObservableObject{
     }
     
     func deleteFolder(){
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(paths)
         do{
             for url in urls{
                 try FileManager.default.removeItem(at: url)

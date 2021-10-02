@@ -9,29 +9,41 @@ import SwiftUI
 
 struct SizeSelectionView: View {
     @EnvironmentObject var viewModel: LogoViewModel
+    @State private var processing = false
     
     var body: some View {
-        VStack{
-            MultiSelectionView(options: $viewModel.sizes, optionToString: {$0.key}, selected: $viewModel.selectedSizes)
-            
-            Button {
-                viewModel.resizeImages()
-                viewModel.saveImages { url in
-                    print("URL of folder:" + "\(String(describing: url))")
+        ZStack{
+            VStack{
+                MultiSelectionView(options: $viewModel.sizes, optionToString: {$0.key}, selected: $viewModel.selectedSizes)
+                    .disabled(processing)
+                Button {
+                    processing = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.01){
+                        viewModel.resizeImages()
+                        viewModel.saveImages { url in
+                            print("URL of folder:" + "\(String(describing: url))")
+                        }
+                    }
+                } label: {
+                    Text("Save")
+                        .bold()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50, alignment: .center)
+                        .foregroundColor(Color.white)
+                        .background(viewModel.selectedSizes.isEmpty ? .secondary : Color("Primary"))
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .padding(.horizontal)
                 }
-            } label: {
-                Text("Save")
-                    .bold()
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50, alignment: .center)
-                    .foregroundColor(Color.white)
-                    .background(viewModel.selectedSizes.isEmpty ? .secondary : Color("Primary"))
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .padding(.horizontal)
+                .padding(.bottom)
+                .disabled(viewModel.selectedSizes.isEmpty || processing)
             }
-            .padding(.bottom)
-            .disabled(viewModel.selectedSizes.isEmpty)
+            .blur(radius: processing ? 10 : 0)
+            
+            if processing{
+                ProgressView()
+            }
         }
+        .navigationBarHidden(processing)
         .navigationTitle(Text("Sizes"))
         .background(Color("Background").ignoresSafeArea())
     }

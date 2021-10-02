@@ -7,7 +7,7 @@
 
 import Foundation
 import RevenueCat
-
+import SwiftUI
 class PurchasesService: ObservableObject{
     
     @Published var allPackages = [Package]()
@@ -21,7 +21,9 @@ class PurchasesService: ObservableObject{
             Purchases.shared.offerings { (offerings, error) in
                 if let packages = offerings?.current?.availablePackages {
                     for package in packages {
-                        self.allPackages.append(package)
+                        withAnimation {
+                            self.allPackages.append(package)
+                        }
                     }
                 }
             }
@@ -30,7 +32,6 @@ class PurchasesService: ObservableObject{
     
     func purchasesProduct(package: Package, completion: @escaping (_ success: Bool) -> Void){
         Purchases.shared.purchase(package: package) { transcaction, purchaserInfo, error, userCancelled in
-            print(transcaction?.transactionDate, purchaserInfo?.nonSubscriptionTransactions, purchaserInfo?.firstSeen)
             completion(!userCancelled)
         }
     }
