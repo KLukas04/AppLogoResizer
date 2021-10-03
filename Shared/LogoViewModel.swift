@@ -21,24 +21,25 @@ class LogoViewModel: ObservableObject{
     @Published var selectedSizes = Set<LogoSize>()
     
     @Published var sizes = [
-        LogoSize(key: "16x16", size: 12),
-        LogoSize(key: "20x20", size: 15),
-        LogoSize(key: "29x29", size: 22),
-        LogoSize(key: "32x32", size: 24),
-        LogoSize(key: "40x40", size: 30),
-        LogoSize(key: "58x58", size: 44),
-        LogoSize(key: "60x60", size: 45),
-        LogoSize(key: "64x64", size: 48),
-        LogoSize(key: "80x80", size: 60),
-        LogoSize(key: "87x87", size: 65),
-        LogoSize(key: "120x120", size: 90),
-        LogoSize(key: "128x128", size: 96),
-        LogoSize(key: "152x152", size: 114),
-        LogoSize(key: "167x167", size: 125),
-        LogoSize(key: "180x180", size: 135),
-        LogoSize(key: "256x256", size: 192),
-        LogoSize(key: "512x512", size: 384),
-        LogoSize(key: "1024x1024", size: 768)
+        LogoSize(key: "16x16", size: 16),
+        LogoSize(key: "20x20", size: 20),
+        LogoSize(key: "29x29", size: 29),
+        LogoSize(key: "32x32", size: 32),
+        LogoSize(key: "40x40", size: 40),
+        LogoSize(key: "58x58", size: 58),
+        LogoSize(key: "60x60", size: 60),
+        LogoSize(key: "64x64", size: 64),
+        LogoSize(key: "76x76", size: 76),
+        LogoSize(key: "80x80", size: 80),
+        LogoSize(key: "87x87", size: 87),
+        LogoSize(key: "120x120", size: 120),
+        LogoSize(key: "128x128", size: 128),
+        LogoSize(key: "152x152", size: 152),
+        LogoSize(key: "167x167", size: 167),
+        LogoSize(key: "180x180", size: 180),
+        LogoSize(key: "256x256", size: 256),
+        LogoSize(key: "512x512", size: 512),
+        LogoSize(key: "1024x1024", size: 1024)
         
     ]
     
@@ -55,7 +56,7 @@ class LogoViewModel: ObservableObject{
         
         if let image = image{
             for selectedSize in selectedSizes {
-                let resizedImage = image.scalePreservingAspectRatio(targetSize: CGSize(width: selectedSize.size, height: selectedSize.size))
+                let resizedImage = image.scale(targetSize: CGSize(width: selectedSize.size/2, height: selectedSize.size/2)) //Durch (4/3) um in points
                 resizedImages[selectedSize.key] = resizedImage
             }
             print(resizedImages.count)
@@ -145,21 +146,14 @@ class LogoViewModel: ObservableObject{
 struct LogoSize: Identifiable, Hashable{
     var id = UUID()
     var key: String
-    var size: Int
+    var size: Double
 }
 
 extension UIImage {
-    func scalePreservingAspectRatio(targetSize: CGSize) -> UIImage {
-        // Determine the scale factor that preserves aspect ratio
-        let widthRatio = targetSize.width / size.width
-        let heightRatio = targetSize.height / size.height
-        
-        let scaleFactor = min(widthRatio, heightRatio)
-        
-        // Compute the new image size that preserves aspect ratio
+    func scale(targetSize: CGSize) -> UIImage {
         let scaledImageSize = CGSize(
-            width: size.width * scaleFactor,
-            height: size.height * scaleFactor
+            width: targetSize.width,
+            height: targetSize.height
         )
         
         // Draw and return the resized UIImage

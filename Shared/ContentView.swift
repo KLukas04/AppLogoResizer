@@ -36,7 +36,7 @@ struct ContentView: View {
                             }
                         Text("Select a 1024x1024 image")
                             .font(.caption2)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(Color("Secondary"))
                             .padding(.top, 8)
                         Spacer()
                     }
@@ -53,7 +53,7 @@ struct ContentView: View {
                         Text(viewModel.height + " x " + viewModel.width)
                             .font(.caption2)
                             .foregroundColor(viewModel.correctSize ? .secondary : .red)
-                        TextField("Name", text: $viewModel.logoName, onEditingChanged: { _ in
+                        TextField("", text: $viewModel.logoName, onEditingChanged: { _ in
                             withAnimation(.easeIn){
                                 if changeValue{
                                     logoWidth = 150
@@ -70,10 +70,14 @@ struct ContentView: View {
                             }
                         })
                             .foregroundColor(.black)
+                            .placeholder(when: viewModel.logoName.isEmpty) {
+                                    Text("Logo-Name").foregroundColor(.gray)
+                            }
                             .padding()
                             .background(Color.white.cornerRadius(10))
                             .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
                             .padding()
+                            
                     }
                     .padding(.top)
                     
@@ -87,7 +91,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity)
                         .frame(height: 50, alignment: .center)
                         .foregroundColor(Color.white)
-                        .background(viewModel.image == nil ? .secondary : Color("Primary"))
+                        .background(viewModel.image == nil ? Color("Secondary") : Color("Primary"))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .padding(.horizontal)
                 }
@@ -105,6 +109,10 @@ struct ContentView: View {
             }
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Wrong image size"), message: Text("You can use this image but the quality could be bad!"))
+            }
+            .onDisappear{
+                logoWidth = 300
+                logoHeight = 300
             }
         }
     }
@@ -126,5 +134,18 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider{
     static var previews: some View{
         ContentView()
+    }
+}
+
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
+        }
     }
 }

@@ -15,6 +15,9 @@ struct AppLogoResizerApp: App {
     init(){
         Purchases.logLevel = .debug
         Purchases.configure(withAPIKey: "gcfugoRFrnhgPNNUyysDahMjUILDRicI")
+        
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     var body: some Scene {
         WindowGroup {

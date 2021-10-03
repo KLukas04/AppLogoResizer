@@ -88,6 +88,7 @@ struct ThankYouScreen: View {
             
             Spacer()
         }
+        .foregroundColor(.white)
         .frame(maxWidth: .infinity)
         .background(Color("Background").ignoresSafeArea())
         .navigationTitle(Text("Success"))

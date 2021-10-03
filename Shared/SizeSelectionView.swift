@@ -30,7 +30,7 @@ struct SizeSelectionView: View {
                         .frame(maxWidth: .infinity)
                         .frame(height: 50, alignment: .center)
                         .foregroundColor(Color.white)
-                        .background(viewModel.selectedSizes.isEmpty ? .secondary : Color("Primary"))
+                        .background(viewModel.selectedSizes.isEmpty ? Color("Secondary") : Color("Primary"))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .padding(.horizontal)
                 }
