@@ -140,6 +140,12 @@ class LogoViewModel: ObservableObject{
                     }
                  }
                 
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    av.popoverPresentationController?.sourceView = UIApplication.shared.windows.first
+                    av.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 800, height: 350)
+                    av.popoverPresentationController?.permittedArrowDirections = [.up]
+                }
+                
                 // <--->
                 
                 UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: {
@@ -193,4 +199,3 @@ extension UIImage {
         return scaledImage
     }
 }
-

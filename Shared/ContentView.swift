@@ -115,6 +115,7 @@ struct ContentView: View {
                 logoHeight = 300
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func loadImage(){
