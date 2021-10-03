@@ -52,6 +52,7 @@ class LogoViewModel: ObservableObject{
     var ulrOfSavedLocation: URL?
     
     @Published var saveTypeMessages = "Name:"
+    @Published var savedToFiles = false
     
     func resizeImages(){
         resizedImages.removeAll()
@@ -127,6 +128,7 @@ class LogoViewModel: ObservableObject{
                                 self.saveTypeMessages = "Your resized logos have been copied to your clipboard with the name:"
                             case .init(rawValue: "com.apple.DocumentManagerUICore.SaveToFiles"):
                                 self.saveTypeMessages = "Your resized logos are saved in the Files-App under the name:"
+                                self.savedToFiles = true
                             default:
                                 self.saveTypeMessages = "Your resized logos have been saved under the name:"
                             }

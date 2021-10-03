@@ -108,7 +108,7 @@ struct ContentView: View {
                 ThankYouScreen()
             }
             .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Wrong image size"), message: Text("You can use this image but the quality could be bad!"))
+                Alert(title: Text("Wrong image size"), message: Text("You can use this image, but the quality may suffer!"))
             }
             .onDisappear{
                 logoWidth = 300

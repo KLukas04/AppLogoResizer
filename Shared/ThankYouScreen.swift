@@ -28,18 +28,19 @@ struct ThankYouScreen: View {
                 .bold()
                 .multilineTextAlignment(.center)
             
-            Button {
-                UIApplication.shared.open(viewModel.ulrOfSavedLocation!)
-            } label: {
-                Text("Open")
-                    .padding(6)
-                    .padding(.horizontal)
-                    .foregroundColor(.white)
-                    .background(Color("Primary"))
-                    .clipShape(Capsule())
-                    .padding()
+            if viewModel.savedToFiles{
+                Button {
+                    UIApplication.shared.open(viewModel.ulrOfSavedLocation!)
+                } label: {
+                    Text("Open")
+                        .padding(6)
+                        .padding(.horizontal)
+                        .foregroundColor(.white)
+                        .background(Color("Primary"))
+                        .clipShape(Capsule())
+                        .padding()
+                }
             }
-
             ZStack{
                 VStack(alignment: .leading){
                     Text("Tips").bold()
