@@ -62,7 +62,7 @@
 		CC76C1982705CA7900524D26 /* AppLogoResizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoResizerApp.swift; sourceTree = "<group>"; };
 		CC76C1992705CA7900524D26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC76C19B2705CA7A00524D26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC76C1A02705CA7B00524D26 /* AppLogoResizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLogoResizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC76C1A02705CA7B00524D26 /* Logo Resizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Logo Resizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC76C1A62705CA7B00524D26 /* AppLogoResizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppLogoResizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC76C1A82705CA7B00524D26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		CC76C1BE2705CAEC00524D26 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		CC76C1A12705CA7B00524D26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC76C1A02705CA7B00524D26 /* AppLogoResizer.app */,
+				CC76C1A02705CA7B00524D26 /* Logo Resizer.app */,
 				CC76C1A62705CA7B00524D26 /* AppLogoResizer.app */,
 			);
 			name = Products;
@@ -194,7 +194,7 @@
 				CC9DAE6F27087553005AC4EC /* Lottie */,
 			);
 			productName = "AppLogoResizer (iOS)";
-			productReference = CC76C1A02705CA7B00524D26 /* AppLogoResizer.app */;
+			productReference = CC76C1A02705CA7B00524D26 /* Logo Resizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CC76C1A52705CA7B00524D26 /* AppLogoResizer (macOS) */ = {
@@ -455,7 +455,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukas.kinke.AppLogoResizer;
-				PRODUCT_NAME = AppLogoResizer;
+				PRODUCT_NAME = "Logo Resizer";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -486,7 +486,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukas.kinke.AppLogoResizer;
-				PRODUCT_NAME = AppLogoResizer;
+				PRODUCT_NAME = "Logo Resizer";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
