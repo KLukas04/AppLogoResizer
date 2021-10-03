@@ -16,10 +16,10 @@ struct ThankYouScreen: View {
     var body: some View {
         VStack{
             SavedView()
-            Text("You resized your Logo to **\(viewModel.selectedSizes.count)** **images**")
+            Text("You resized your Logo to \(viewModel.selectedSizes.count) images")
                 .font(.caption2)
                 .italic()
-            Text("Your resized images are saved in the **Files-App** under the Name:")
+            Text(viewModel.saveTypeMessages)
                 .font(.caption)
                 .multilineTextAlignment(.center)
                 .padding()

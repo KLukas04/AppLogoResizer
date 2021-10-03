@@ -51,6 +51,8 @@ class LogoViewModel: ObservableObject{
     
     var ulrOfSavedLocation: URL?
     
+    @Published var saveTypeMessages = "Name:"
+    
     func resizeImages(){
         resizedImages.removeAll()
         
@@ -86,9 +88,6 @@ class LogoViewModel: ObservableObject{
         do {
             for image in resizedImages{
                 if let imageData = image.value.pngData(){
-                    if logoName.isEmpty{
-                        logoName = "Logo"
-                    }
                     print(image.key)
                     try imageData.write(to: directory.appendingPathComponent(logoName + "_" + image.key + ".png"))
                 }else{
@@ -103,15 +102,35 @@ class LogoViewModel: ObservableObject{
     
     func saveImages(completion: @escaping ((URL?) -> ())) {
         if !resizedImages.isEmpty{
+            if logoName.isEmpty{
+                logoName = "Logo"
+            }
             DispatchQueue.main.async {
                 guard let directory = self.saveImages() else {
                     completion(nil)
                     return
                 }
                 
+                //MARK: SHARESHEET
+                
                 let av = UIActivityViewController(activityItems: [directory], applicationActivities: nil)
                 av.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
                     if completed {
+                        print(activityType!)
+                        if let aType = activityType{
+                            switch aType{
+                            case .airDrop:
+                                self.saveTypeMessages = "Your resized logos were sent via AirDrop with the name:"
+                            case .mail:
+                                self.saveTypeMessages = "Your resized logos were sent by email in a folder with the name:"
+                            case .copyToPasteboard:
+                                self.saveTypeMessages = "Your resized logos have been copied to your clipboard with the name:"
+                            case .init(rawValue: "com.apple.DocumentManagerUICore.SaveToFiles"):
+                                self.saveTypeMessages = "Your resized logos are saved in the Files-App under the name:"
+                            default:
+                                self.saveTypeMessages = "Your resized logos have been saved under the name:"
+                            }
+                        }
                         self.deleteFolder()
                         self.showThankYouScreen = true
                         let path = directory.absoluteString.replacingOccurrences(of: "file://", with: "shareddocuments://")
@@ -119,6 +138,7 @@ class LogoViewModel: ObservableObject{
                     }
                  }
                 
+                // <--->
                 
                 UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: {
                     print("Success")
@@ -171,3 +191,4 @@ extension UIImage {
         return scaledImage
     }
 }
+
