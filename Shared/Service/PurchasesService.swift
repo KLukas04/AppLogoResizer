@@ -22,9 +22,6 @@ class PurchasesService: ObservableObject{
                 if let packages = offerings?.current?.availablePackages {
                     for package in packages {
                         withAnimation {
-                            let id = package.product.productIdentifier
-                            let name = id.split(separator: ".")
-                            print(name.last?.replacingOccurrences(of: "_", with: " "))
                             self.allPackages.append(package)
                         }
                     }
