@@ -63,8 +63,9 @@ struct ThankYouScreen: View {
                                 }
                             } label: {
                                 HStack{
-                                    Text(purchasesService.emoji[package.product.localizedTitle] ?? "🥳")
-                                    Text(package.product.localizedTitle)
+                                    let name = String(package.product.productIdentifier.split(separator: ".").last ?? "Tip")
+                                    Text(purchasesService.emoji[name] ?? "🥳")
+                                    Text(package.product.localizedTitle != "" ? package.product.localizedTitle : name.replacingOccurrences(of: "_", with: " "))
                                     Spacer()
                                     Text(package.localizedPriceString)
                                 }

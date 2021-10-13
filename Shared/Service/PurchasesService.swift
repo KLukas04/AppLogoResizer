@@ -13,8 +13,8 @@ class PurchasesService: ObservableObject{
     @Published var allPackages = [Package]()
     
     var emoji = [
-        "Cookie Tip": "🍪",
-        "Coffe Tip": "☕️"
+        "Cookie_Tip": "🍪",
+        "Coffee_Tip": "☕️"
     ]
     func getProducts(){
         DispatchQueue.main.async {
@@ -22,6 +22,9 @@ class PurchasesService: ObservableObject{
                 if let packages = offerings?.current?.availablePackages {
                     for package in packages {
                         withAnimation {
+                            let id = package.product.productIdentifier
+                            let name = id.split(separator: ".")
+                            print(name.last?.replacingOccurrences(of: "_", with: " "))
                             self.allPackages.append(package)
                         }
                     }
