@@ -29,6 +29,7 @@ struct LottieView: UIViewRepresentable {
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopMode
+        animationView.backgroundBehavior = .pauseAndRestore
         
         let markerNames = animation.markerNames
         
@@ -57,15 +58,17 @@ struct LottieView: UIViewRepresentable {
         return view
     }
     
+    //MARK: Uncomment wenn Animation should be able to pause
+    
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieView>) {
         /*if isPaused {
             context.coordinator.parent.animationView.pause()
         } else {
             context.coordinator.parent.animationView.play()
             
-        }*/
-        
-        //MARK: Uncomment wenn Animation should be able to pause
+        }
+        */
+        print("Update")
     }
     
     /*

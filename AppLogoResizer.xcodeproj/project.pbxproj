@@ -459,7 +459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukas.kinke.AppLogoResizer;
 				PRODUCT_NAME = "Logo Resizer";
 				SDKROOT = iphoneos;
@@ -490,7 +490,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukas.kinke.AppLogoResizer;
 				PRODUCT_NAME = "Logo Resizer";
 				SDKROOT = iphoneos;
