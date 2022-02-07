@@ -16,6 +16,7 @@ struct ThankYouScreen: View {
     var body: some View {
         VStack{
             SavedView()
+                .reviewCounter()
             Text("You resized your Logo to \(viewModel.selectedSizes.count) images")
                 .font(.caption2)
                 .italic()
