@@ -13,6 +13,7 @@ struct ThankYouScreen: View {
     @StateObject var purchasesService = PurchasesService()
     
     @State private var counter = 0
+    @State private var showSheet = false
     var body: some View {
         VStack{
             SavedView()
@@ -79,6 +80,50 @@ struct ThankYouScreen: View {
                                 .padding(.bottom)
                             }
                         }
+                        
+                        Button(action: {
+                            if let url = URL(string: "https://apps.apple.com/us/app/app-logo-resizer/id1588419704") {
+                                UIApplication.shared.open(url)
+                            }
+                        }){
+                            HStack{
+                                Text("🥳")
+                                Spacer()
+                                Text("Rate on AppStore")
+                                    .bold()
+                                Spacer()
+                                Text("🥳")
+                            }
+                            .foregroundColor(Color.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.black)
+                            .clipShape(Capsule())
+                            .padding(.horizontal)
+                            .padding(.bottom)
+                        }
+                        Button(action: {showSheet.toggle()}){
+                            HStack{
+                                Text("❤️")
+                                Spacer()
+                                Text("Share")
+                                Spacer()
+                                Text("❤️")
+                            }
+                            .foregroundColor(Color.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.black)
+                            .clipShape(Capsule())
+                            .padding(.horizontal)
+                            .padding(.bottom)
+                            .sheet(isPresented: $showSheet) {
+                                ShareSheet(activityItems: [(URL(string: "https://apps.apple.com/us/app/app-logo-resizer/id1588419704") ?? nil), "Resize your App Logo!"])
+                            }
+                        }
+                        
+                        //let url = URL(string: "https://apps.apple.com/us/app/app-logo-resizer/id1588419704")
+                       // let head = "Resize your App Logo!"
                     }
                 }
                 .frame(maxWidth: .infinity)

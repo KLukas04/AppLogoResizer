@@ -41,6 +41,8 @@
 		CC9DAE7927088541005AC4EC /* add.json in Resources */ = {isa = PBXBuildFile; fileRef = CC9DAE7727088541005AC4EC /* add.json */; };
 		CC9DAE7E27088C5A005AC4EC /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = CC9DAE7D27088C5A005AC4EC /* loading.json */; };
 		CC9DAE7F27088C5A005AC4EC /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = CC9DAE7D27088C5A005AC4EC /* loading.json */; };
+		CCBC6F4927B8349A007EF6FE /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC6F4827B8349A007EF6FE /* ShareSheet.swift */; };
+		CCBC6F4A27B8349A007EF6FE /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC6F4827B8349A007EF6FE /* ShareSheet.swift */; };
 		CCC1A2E027B13A6900A5E116 /* AskForReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1A2DF27B13A6900A5E116 /* AskForReview.swift */; };
 		CCC1A2E127B13A6900A5E116 /* AskForReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1A2DF27B13A6900A5E116 /* AskForReview.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,7 @@
 		CC9DAE7427087719005AC4EC /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 		CC9DAE7727088541005AC4EC /* add.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = add.json; sourceTree = "<group>"; };
 		CC9DAE7D27088C5A005AC4EC /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		CCBC6F4827B8349A007EF6FE /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		CCC1A2DF27B13A6900A5E116 /* AskForReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForReview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +123,7 @@
 				CC76C1C42705DF4A00524D26 /* SizeSelectionView.swift */,
 				CC76C1D0270766A700524D26 /* ThankYouScreen.swift */,
 				CCC1A2DF27B13A6900A5E116 /* AskForReview.swift */,
+				CCBC6F4827B8349A007EF6FE /* ShareSheet.swift */,
 				CC9DAE6527085D49005AC4EC /* SubViews */,
 				CC9DAE6627085D72005AC4EC /* Service */,
 				CC76C19B2705CA7A00524D26 /* Assets.xcassets */,
@@ -295,6 +299,7 @@
 				CC76C1C82705E74600524D26 /* MultiSelector.swift in Sources */,
 				CC76C1BF2705CAEC00524D26 /* ImagePicker.swift in Sources */,
 				CC76C1AB2705CA7B00524D26 /* AppLogoResizerApp.swift in Sources */,
+				CCBC6F4927B8349A007EF6FE /* ShareSheet.swift in Sources */,
 				CC9DAE6827085DD0005AC4EC /* AvtivityIndicator.swift in Sources */,
 				CC4A045A270778730008C56B /* PurchasesService.swift in Sources */,
 				CC9DAE7527087719005AC4EC /* SavedView.swift in Sources */,
@@ -314,6 +319,7 @@
 				CC76C1C92705E74600524D26 /* MultiSelector.swift in Sources */,
 				CC76C1C02705CAEC00524D26 /* ImagePicker.swift in Sources */,
 				CC76C1AC2705CA7B00524D26 /* AppLogoResizerApp.swift in Sources */,
+				CCBC6F4A27B8349A007EF6FE /* ShareSheet.swift in Sources */,
 				CC9DAE6927085DD0005AC4EC /* AvtivityIndicator.swift in Sources */,
 				CC4A045B270778730008C56B /* PurchasesService.swift in Sources */,
 				CC9DAE7627087719005AC4EC /* SavedView.swift in Sources */,
