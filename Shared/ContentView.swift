@@ -24,6 +24,7 @@ struct ContentView: View {
     @State private var logoWidth: CGFloat = 300
     @State private var logoHeight: CGFloat = 300
     @State private var changeValue = true
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -41,7 +42,7 @@ struct ContentView: View {
                         Spacer()
                     }
                 }else{
-                    VStack{
+                    ScrollView{
                         Image(uiImage: viewModel.image!)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -72,11 +73,11 @@ struct ContentView: View {
                             .foregroundColor(.black)
                             .placeholder(when: viewModel.logoName.isEmpty) {
                                     Text("Logo-Name").foregroundColor(.gray)
-                            }
-                            .padding()
-                            .background(Color.white.cornerRadius(10))
-                            .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
-                            .padding()
+                                }
+                                .padding()
+                                .background(Color.white.cornerRadius(10))
+                                .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
+                                .padding()
                             
                     }
                     .padding(.top)
@@ -143,10 +144,10 @@ extension View {
         when shouldShow: Bool,
         alignment: Alignment = .leading,
         @ViewBuilder placeholder: () -> Content) -> some View {
-
-        ZStack(alignment: alignment) {
-            placeholder().opacity(shouldShow ? 1 : 0)
-            self
+            
+            ZStack(alignment: alignment) {
+                placeholder().opacity(shouldShow ? 1 : 0)
+                self
+            }
         }
-    }
 }
